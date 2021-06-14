@@ -1,0 +1,22 @@
+@startuml
+
+package sample <<Folder>>{
+package nodes <<Folder>>{
+class Arrows
+class Begin
+class End
+class Operation
+class Solution
+}
+package observers <<Folder>>{
+class arrowsObserver extends Observer
+class nameObserver extends Observer
+class positionObserver extends Observer
+abstract class Observer
+}
+class Controller implements javafx.fxml.Initializable
+class Main implements javafx.application.Application
+class Subject
+}
+
+@enduml
