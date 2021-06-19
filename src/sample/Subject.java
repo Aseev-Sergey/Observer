@@ -1,5 +1,8 @@
 package sample;
 
+import javafx.scene.Node;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
 import sample.observers.Observer;
 
 import java.util.ArrayList;
@@ -8,17 +11,15 @@ import java.util.List;
 public class Subject {
 
     private List<Observer> observers = new ArrayList<Observer>();
-    private String state;
-    private int index;
+    private Node state;
 
-    public void setState(String nodeName, int posList, double mouseX, double mouseY) {
-        state = nodeName;
-        index = posList;
-        notifyAllObservers(mouseX, mouseY);
-    }
 
     public void attach(Observer observer){
         observers.add(observer);
+    }
+
+    public void detach(Observer observer){
+        observers.remove(observer);
     }
 
     public void notifyAllObservers(double mouseX, double mouseY){
@@ -27,9 +28,23 @@ public class Subject {
         }
     }
 
-    public String getState() {
+    public Node getState() {
         return state;
     }
 
-    public int getIndex(){return index;}
+    public void setState(Node node){
+        state = node;
+    }
+
+    public void setState(Node node, double mouseX, double mouseY) {
+        state = node;
+        notifyAllObservers(mouseX, mouseY);
+    }
+
+    public void setState(double mouseX, double mouseY){
+        notifyAllObservers(mouseX, mouseY);
+    }
+
+
+
 }
