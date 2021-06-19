@@ -3,26 +3,27 @@
 ## Назначение программы
 Показать практическое применение шаблона "Наблюдатель" по теме "Диаграмма деятельности".
 
-Класс Subject хранит данные (информацию о выбранном узле), а всю функциональность "представлений" делегирует слабосвязанным отдельным объектам Observer (arrowsObserver, nameObserver, posObserver.
+Класс Subject хранит данные (информацию о выбранном узле), а всю функциональность "представлений" делегирует слабосвязанным отдельным объектам Observer (AimingObserver, PickingObserver, MovingObserver.
 
-При создании наблюдатели Observer регистрируются у объекта Subject. В данном примере есть 3 наблюдателя, отвечающие за положение объекта (posObserver), связующих стрелок (arrowsObserver), названия текущего объекта (nameObserver)
+При создании наблюдатели Observer регистрируются у объекта Subject. В данном примере есть 3 наблюдателя, отвечающие за выделение при наведении на объект (AimingObserver), передвижения объекта (MovingObserver) и его эффекта (PickingObserver)
 
 Когда объект Subject изменяется, он извещает об этом всех зарегистрированных наблюдателей. После этого каждый обозреватель запрашивает у объекта Subject ту часть состояния, которая необходима для отображения данных.
 ## Диаграмма классов
 
-![0](https://user-images.githubusercontent.com/85245803/121861552-92b69500-cd02-11eb-8390-6cee374c7681.png)
+![0](https://user-images.githubusercontent.com/85245803/122653620-72e1ff80-d14e-11eb-955b-e47b55faa6bb.png)
 
 ## Работа программы
 Запуск программы
 
-![1](https://user-images.githubusercontent.com/85245803/121862320-5fc0d100-cd03-11eb-9df7-57a5bd5c27b6.png)
+![1](https://user-images.githubusercontent.com/85245803/122653626-7bd2d100-d14e-11eb-86ed-fc40dea337f2.png)
 
-При выборе объекта из списка, наблюдатели оповещаются об изменении состояния
+Эффект при наведении на объект мышкой:
 
-![2](https://user-images.githubusercontent.com/85245803/121862562-9696e700-cd03-11eb-97a4-c06dcb29ef86.png)
-![3](https://user-images.githubusercontent.com/85245803/121862576-9991d780-cd03-11eb-9178-4c442dfe9545.png)
-![4](https://user-images.githubusercontent.com/85245803/121862582-9b5b9b00-cd03-11eb-9053-6aaf3e2354ab.png)
-![5](https://user-images.githubusercontent.com/85245803/121862591-9dbdf500-cd03-11eb-8394-4e3bd25e9cda.png)
+![2](https://user-images.githubusercontent.com/85245803/122653629-81c8b200-d14e-11eb-8d45-2ea50b04ec1b.png)
+
+Эффект при перемещении объекта мышкой:
+
+![3](https://user-images.githubusercontent.com/85245803/122653630-83927580-d14e-11eb-903d-0a0559370911.png)
 
 Кнопка "Очистить" приводит программу в первоначальный вид.
 
