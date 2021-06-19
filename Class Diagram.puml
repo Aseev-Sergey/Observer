@@ -2,16 +2,14 @@
 
 package sample <<Folder>>{
 package nodes <<Folder>>{
-class Arrows
 class Begin
-class End
 class Operation
 class Solution
 }
 package observers <<Folder>>{
-class arrowsObserver extends Observer
-class nameObserver extends Observer
-class positionObserver extends Observer
+class MovingObserver extends Observer
+class PickingObserver extends Observer
+class AimingObserver extends Observer
 abstract class Observer
 }
 class Controller implements javafx.fxml.Initializable
